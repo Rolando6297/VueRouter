@@ -32,7 +32,7 @@ getData();
     </div>
     <div v-else>
     <h1 >Poke name: {{ $route.params.pokemon }} </h1>
-    <p> Description {{pokemon.name }}</p>
+    <p> Description {{pokemon.name }} </p>
     <img :src="pokemon.sprites?.front_default" alt="cargando ...">
     <button @click="back" class="btn btn-outline-success">Back</button>
     </div>
