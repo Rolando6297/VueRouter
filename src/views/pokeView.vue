@@ -1,16 +1,19 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
 import { useGetData } from '@/composables/getData';
-import {useCounterStore} from '@/store/counter.js'
+import { useCounterStore } from '@/store/counter.js'
+import {useFavoritosStore } from "@/store/favoritos"
 const useCounter = useCounterStore()
 const router = useRouter();
 const route = useRoute();
+const useFavoritos = useFavoritosStore();
 const { data, getData, loading, error } = useGetData();
 const back = () => {
     router.push('/pokemons')
 }
 getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokemon}`);
 
+const {add} =useFavoritos;
 
 </script>
 
@@ -18,7 +21,7 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokemon}`);
     <div v-if="loading">
         <div class="text-center">
             <div class="spinner-border" role="status">
-                <span class="sr-only">Cargando..</span>´´
+                <span class="sr-only">Cargando..</span>
             </div>
         </div>
     </div>
@@ -30,9 +33,11 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokemon}`);
         </div>
         <div v-else>
             <div>
-                <h1>Poke name: {{ $route.params.pokemon }}   {{ useCounter.double }}</h1>
+                <h1>Poke name: {{ $route.params.pokemon }} {{ useCounter.double }}</h1>
                 <p> Description {{ data.name }} </p>
                 <img :src="data.sprites?.front_default" alt="cargando ...">
+                <button class="btn btn-primary mt-2" @click="add(data)">Agregar a favoritos</button>
+                <br>
                 <button @click="back" class="btn btn-outline-success">Back</button>
             </div>
         </div>

@@ -11,9 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
         Api Pokemon
       </a>
       <div>
-      <RouterLink class="btn btn-outline-success" to="/">Home</RouterLink>
-      <RouterLink class="btn btn-outline-success" to="/about">About</RouterLink>
-      <RouterLink class="btn btn-outline-success" to="/pokemons">Pokemons</RouterLink>
+      <RouterLink class="btn btn-outline-success me-1" to="/">Home</RouterLink>
+      <RouterLink class="btn btn-outline-success me-1" to="/about">About</RouterLink>
+      <RouterLink class="btn btn-outline-success me-1" to="/pokemons">Pokemons</RouterLink>
+      <RouterLink class="btn btn-outline-success me-1" to="/favoritos">Favoritos</RouterLink>
     </div>
     </div>
   </nav>
