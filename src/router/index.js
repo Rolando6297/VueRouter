@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import PokemonsView from '../views/pokemonsView.vue';
-import pokemonsView from '../views/pokemonsView.vue';
-import pokeView from '../views/pokeView.vue';
-import NotFoundView from '../views/NotFoundView.vue'
+import HomeView from '@/views/HomeView.vue';
+import PokemonsView from '@/views/pokemonsView.vue';
+import pokemonsView from '@/views/pokemonsView.vue';
+import pokeView from '@/views/pokeView.vue';
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +31,11 @@ const router = createRouter({
       path: '/pokemons/:pokemon',
       name: 'poke',
       component: pokeView
+    },
+    {
+      path: '/favoritos',
+      name: 'favoritos',
+      component:  () => import("@/views/Favoritos.vue")
     },
     {
       path: "/:pathMatch(.*)*",
