@@ -4,7 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <nav class="navbar bg-dark navbar-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand btn btn-outline-success" href="#">
         <img src="@/assets/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -17,7 +17,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
     </div>
   </nav>
-<div class="container"><RouterView /></div>
+<div class="container text-center"><RouterView /></div>
   
 </template>
 
