@@ -13,7 +13,7 @@ const back = () => {
 }
 getData(`https://pokeapi.co/api/v2/pokemon/${route.params.pokemon}`);
 
-const {add} =useFavoritos;
+const {add, findPokemon} =useFavoritos;
 
 </script>
 
@@ -36,7 +36,7 @@ const {add} =useFavoritos;
                 <h1>Poke name: {{ $route.params.pokemon }} {{ useCounter.double }}</h1>
                 <p> Description {{ data.name }} </p>
                 <img :src="data.sprites?.front_default" alt="cargando ...">
-                <button class="btn btn-primary mt-2" @click="add(data)">Agregar a favoritos</button>
+                <button class="btn btn-primary mt-2" @click="add(data)"  :disabled="findPokemon(data.name)">Agregar a favoritos</button>
                 <br>
                 <button @click="back" class="btn btn-outline-success">Back</button>
             </div>
